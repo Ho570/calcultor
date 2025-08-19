@@ -1,0 +1,145 @@
+/* ===== Calculator UI — CSS Only ===== */
+
+/* Page layout */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #e2e8f0;
+}
+
+/* Center the calculator */
+body {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* Calculator container (using the existing <form>) */
+form {
+  width: 320px;
+  background: #0b1220;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+/* Display */
+input[name="display"] {
+  width: 100%;
+  height: 64px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  padding: 0 14px;
+  background: #111827;
+  color: #e5e7eb;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: right;
+  letter-spacing: 0.5px;
+  box-shadow: inset 0 0 0 1px #1f2937;
+}
+
+/* Table reset */
+table {
+  width: 100%;
+  margin-top: 12px;
+  border-collapse: separate;
+  border-spacing: 10px;
+  border: none;
+}
+td {
+  padding: 0;
+  border: none;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  height: 56px;
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #e5e7eb;
+  background: #1f2937;
+  cursor: pointer;
+  transition: transform 0.06s ease, filter 0.2s ease, background 0.2s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* Operator keys */
+td:last-child button,
+button:contains("÷"), /* will be ignored by most browsers; keep classless fallback below */
+button:contains("×"),
+button:contains("−"),
+button:contains("+") {
+  background: #243145;
+}
+
+/* Semantic coloring via position */
+tr td:nth-child(4) button {
+  background: #243145;
+} /* operators column */
+tr:last-of-type td:nth-child(3) button {
+  background: #0ea5e9;
+  color: #081018;
+} /* equals */
+tr:last-of-type td:nth-child(1) button {
+  background: #334155;
+} /* 0 */
+tr:last-of-type td:nth-child(2) button {
+  background: #334155;
+} /* . */
+
+/* Wide keys in last row */
+tr:last-child td[colspan="2"] button {
+  height: 48px;
+  background: #374151;
+}
+
+/* Hover/active states */
+button:hover {
+  filter: brightness(1.08);
+}
+button:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+/* Focus visible for accessibility */
+button:focus-visible,
+input[name="display"]:focus-visible {
+  box-shadow: 0 0 0 3px #0ea5e980, inset 0 0 0 1px #0ea5e9;
+}
+
+/* Small screens */
+@media (max-width: 360px) {
+  form {
+    width: 100%;
+  }
+  button {
+    height: 52px;
+    font-size: 17px;
+  }
+  input[name="display"] {
+    height: 58px;
+    font-size: 24px;
+  }
+}
+
+/* Optional: make = key pop */
+tr:nth-last-child(2) td:nth-child(3) button,
+tr:last-child td:nth-child(3) button {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

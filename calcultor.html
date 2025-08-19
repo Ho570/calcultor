@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="calculator.css" />
+    <title>Simple Calculator UI (HTML Only)</title>
+  </head>
+  <body>
+    <!-- Calculator front (no CSS/JS) -->
+    <h2>Calculator</h2>
+
+    <!-- Display -->
+    <form>
+      <input type="text" name="display" readonly placeholder="0" />
+
+      <!-- Keypad laid out with a table for simple HTML-only grid -->
+      <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+          <td><button type="button">7</button></td>
+          <td><button type="button">8</button></td>
+          <td><button type="button">9</button></td>
+          <td><button type="button">÷</button></td>
+        </tr>
+        <tr>
+          <td><button type="button">4</button></td>
+          <td><button type="button">5</button></td>
+          <td><button type="button">6</button></td>
+          <td><button type="button">×</button></td>
+        </tr>
+        <tr>
+          <td><button type="button">1</button></td>
+          <td><button type="button">2</button></td>
+          <td><button type="button">3</button></td>
+          <td><button type="button">−</button></td>
+        </tr>
+        <tr>
+          <td><button type="button">0</button></td>
+          <td><button type="button">.</button></td>
+          <td><button type="button">=</button></td>
+          <td><button type="button">+</button></td>
+        </tr>
+        <tr>
+          <td colspan="2"><button type="button">C</button></td>
+          <td colspan="2"><button type="button">⌫</button></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
